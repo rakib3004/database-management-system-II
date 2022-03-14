@@ -41,7 +41,7 @@ def accuracy_metric(actual, predicted):
 
 # Evaluate an algorithm using a cross validation split
 
-def evaluate_algorithm(dataset, algorithm, n_folds):
+def evaluate_algorithm(dataset, n_folds):
     folds = cross_validation_split(dataset, n_folds)
     scores = list()
     for fold in folds:
@@ -49,7 +49,7 @@ def evaluate_algorithm(dataset, algorithm, n_folds):
         train_set.remove(fold)
         train_set = sum(train_set, [])
         test_set = list(fold)
-        predicted = algorithm(train_set, test_set)
+        predicted = decision_tree(train_set, test_set)
         actual = [row[feature_intdx] for row in fold]
         accuracy = accuracy_metric(actual, predicted)
         scores.append(accuracy)
@@ -171,6 +171,6 @@ feature index in 0 is indicate the class name
 
 '''
 feature_intdx = 0
-scores = evaluate_algorithm(dataset, decision_tree, n_folds)
+scores = evaluate_algorithm(dataset, n_folds)
 print('Scores: %s' % scores)
 print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
