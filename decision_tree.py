@@ -156,7 +156,7 @@ def decision_tree(train, test):
 
 seed(1)
 # load and prepare data
-filename = 'wine.csv'
+filename = 'wine.data'
 dataset = load_csv(filename)
 # convert string attributes to integers
 for i in range(len(dataset[0])-1):
@@ -164,12 +164,13 @@ for i in range(len(dataset[0])-1):
 
 # evaluate algorithm
 n_folds = 10
-## isolate 617
-#wine 13
-## letter recognization 16
-#ionsphier 34
-## parkinsons 21
-feature_intdx = 13
+
+'''
+feature index in 0 is indicate the class name
+
+
+'''
+feature_intdx = 0
 scores = evaluate_algorithm(dataset, decision_tree, n_folds)
 print('Scores: %s' % scores)
 print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
