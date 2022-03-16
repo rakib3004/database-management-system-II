@@ -146,9 +146,9 @@ def predict(node, row):
 
 # Classification and Regression Tree Algorithm
 
-def print_tree(node, depth):
+def print_tree(node, depth=0):
 	if isinstance(node, dict):
-		print('%s[X%d < %.3f]' % ((depth*' ', (node['index']+1), node['value'])))
+		print('%s[X%d < %.3f]' % (depth*' ', (node['index']+1), node['value']))
 		print_tree(node['left'], depth+1)
 		print_tree(node['right'], depth+1)
 	else:
@@ -157,7 +157,7 @@ def print_tree(node, depth):
 
 def decision_tree(train, test):
     tree = build_tree(train)
-    print_tree(tree,0)
+    print_tree(tree)
     predictions = list()
     for row in test:
         prediction = predict(tree, row)
@@ -169,7 +169,7 @@ seed(1)
 filename = 'wine.data'
 dataset = load_csv(filename)
 # convert string attributes to integers
-for i in range(len(dataset[0])-1):
+for i in range(len(dataset[0])):
     str_column_to_float(dataset, i)
 
 # evaluate algorithm
