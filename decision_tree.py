@@ -174,3 +174,4 @@ feature_intdx = 0
 scores = evaluate_algorithm(dataset, n_folds)
 print('Scores: %s' % scores)
 print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
+
