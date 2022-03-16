@@ -148,6 +148,7 @@ def predict(node, row):
 
 def decision_tree(train, test):
     tree = build_tree(train)
+    print_tree(tree)
     predictions = list()
     for row in test:
         prediction = predict(tree, row)
