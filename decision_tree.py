@@ -146,9 +146,18 @@ def predict(node, row):
 
 # Classification and Regression Tree Algorithm
 
+def print_tree(node, depth):
+	if isinstance(node, dict):
+		print('%s[X%d < %.3f]' % ((depth*' ', (node['index']+1), node['value'])))
+		print_tree(node['left'], depth+1)
+		print_tree(node['right'], depth+1)
+	else:
+		print('%s[%s]' % ((depth*' ', node)))
+
+
 def decision_tree(train, test):
     tree = build_tree(train)
-    print_tree(tree)
+    print_tree(tree,0)
     predictions = list()
     for row in test:
         prediction = predict(tree, row)
