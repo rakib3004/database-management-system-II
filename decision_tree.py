@@ -163,6 +163,10 @@ def decision_tree(train, test):
     for row in test:
         prediction = predict(tree, row)
         predictions.append(prediction)
+        print('The row: ',row)
+    newRow=[2.0, 12.86, 1.33, 1.97, 23.0, 80.0, 2.64, 2.78, 0.26, 1.50, 3.01, 1.25, 2.99, 350.0]
+    newPrediction=predict(tree,newRow)
+    print('Client Customize Output: ',newPrediction)
     return(predictions)
 
 seed(1)
@@ -186,3 +190,9 @@ scores = evaluate_algorithm(dataset, n_folds)
 print('Scores: %s' % scores)
 print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
 
+'''
+
+khonika=[2.0, 12.86, 1.33, 1.97, 23.0, 80.0, 2.64, 2.78, 0.26, 1.50, 3.01, 1.25, 2.99, 350.0]
+
+
+'''
