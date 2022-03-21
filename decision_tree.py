@@ -164,7 +164,7 @@ def decision_tree(train, test):
         prediction = predict(tree, row)
         predictions.append(prediction)
         print('The row: ',row)
-    newRow=[2.0, 12.86, 1.33, 1.97, 23.0, 80.0, 2.64, 2.78, 0.26, 1.50, 3.01, 1.25, 2.99, 350.0]
+    newRow=[2.0, 12.86, 1.33, 22.97, 23.0, 40.0, 2.64, 5.78, 0.26, 1.50, 3.01, 0.0, 20.99, 0.0]
     newPrediction=predict(tree,newRow)
     print('New wine predicted class: ',newPrediction)
     return(predictions)
