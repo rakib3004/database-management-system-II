@@ -166,7 +166,7 @@ def decision_tree(train, test):
         print('The row: ',row)
     newRow=[2.0, 12.86, 1.33, 1.97, 23.0, 80.0, 2.64, 2.78, 0.26, 1.50, 3.01, 1.25, 2.99, 350.0]
     newPrediction=predict(tree,newRow)
-    print('Client Customize Output: ',newPrediction)
+    print('New wine predicted class: ',newPrediction)
     return(predictions)
 
 seed(1)
