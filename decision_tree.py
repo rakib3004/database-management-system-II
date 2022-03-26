@@ -146,12 +146,27 @@ def predict(node, row):
 
 # Classification and Regression Tree Algorithm
 
+def print_tree(node, depth=0):
+    
+	if isinstance(node, dict):
+		print('level:%d %s[X%d < %.3f]' % (depth, depth*'   ', (node['index']+1), node['value']))
+		print_tree(node['left'], depth+1)
+		print_tree(node['right'], depth+1)
+	else:
+		print('%s[%s]' % ((depth*'   ', node)))
+
+
 def decision_tree(train, test):
     tree = build_tree(train)
+    print_tree(tree)
     predictions = list()
     for row in test:
         prediction = predict(tree, row)
         predictions.append(prediction)
+        print('The row: ',row)
+    newRow=[2.0, 12.86, 1.33, 22.97, 23.0, 40.0, 2.64, 5.78, 0.26, 1.50, 3.01, 0.0, 20.99, 0.0]
+    newPrediction=predict(tree,newRow)
+    print('New wine predicted class: ',newPrediction)
     return(predictions)
 
 seed(1)
@@ -159,7 +174,7 @@ seed(1)
 filename = 'wine.data'
 dataset = load_csv(filename)
 # convert string attributes to integers
-for i in range(len(dataset[0])-1):
+for i in range(len(dataset[0])):
     str_column_to_float(dataset, i)
 
 # evaluate algorithm
@@ -174,3 +189,10 @@ feature_intdx = 0
 scores = evaluate_algorithm(dataset, n_folds)
 print('Scores: %s' % scores)
 print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
+
+'''
+
+khonika=[2.0, 12.86, 1.33, 1.97, 23.0, 80.0, 2.64, 2.78, 0.26, 1.50, 3.01, 1.25, 2.99, 350.0]
+
+
+'''
