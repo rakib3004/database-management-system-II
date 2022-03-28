@@ -16,7 +16,6 @@ def calculate_distance(testVec, examVec):
     distance = 0
     for i in range(len(examVec)):
         distance += (testVec[i] - examVec[i]) * (testVec[i] - examVec[i])
-    print(testVec[1],examVec[1],math.sqrt(distance))
     return math.sqrt(distance)
 
 def count_neighbour(k,class1,class2):
@@ -27,6 +26,7 @@ def count_neighbour(k,class1,class2):
             class1_count += 1
         else:
             class2_count += 1
+        print(class1_count,class2_count)
     return class1_count,class2_count
 
 if __name__ == '__main__':
@@ -34,17 +34,19 @@ if __name__ == '__main__':
     forestVector = loadImginVector('forest/*')
     mountainVector = loadImginVector('mountain/*')
 
-    test_vector = loadImginVector('forest.png')[0]
-    
-    forest_distance =  sorted([calculate_distance(test_vector,exam_vector) for exam_vector in forestVector])
-    mountain_distance = sorted([calculate_distance(test_vector,exam_vector) for exam_vector in mountainVector])
+    testDocuments = loadImginVector('test/*')
 
-    k = 10
-    countNeig = count_neighbour(k,forest_distance,mountain_distance)
-    forestCount = countNeig[0]
-    mountainCount = countNeig[1]
+    for test_vector in testDocuments:
 
-    if forestCount > mountainCount:
-        print('forest')
-    else:
-        print("mountain")
+        forest_distance =  sorted([calculate_distance(test_vector,exam_vector) for exam_vector in forestVector])
+        mountain_distance = sorted([calculate_distance(test_vector,exam_vector) for exam_vector in mountainVector])
+        print('forest distance: ', forest_distance, 'mountain_distance: ', mountain_distance )
+        k = 10
+        countNearestNeighbour = count_neighbour(k,forest_distance,mountain_distance)
+        forestCount = countNearestNeighbour[0]
+        mountainCount = countNearestNeighbour[1]
+
+        if forestCount > mountainCount:
+            print('forest')
+        else:
+            print("mountain")
