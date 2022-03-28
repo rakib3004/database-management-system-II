@@ -33,12 +33,12 @@ if __name__ == '__main__':
     iceVector = loadImginVector('bangladesh/*')
     fireVector = loadImginVector('india/*')
 
-    test_vector = loadImginVector('')[0]
+    test_vector = loadImginVector('t_ban.jpg')[0]
     
     ice_distance =  sorted([calculate_distance(test_vector,exam_vector) for exam_vector in iceVector])
     fire_distance = sorted([calculate_distance(test_vector,exam_vector) for exam_vector in fireVector])
 
-    k = 5
+    k = 3
     countNeig = count_neighbour(k,ice_distance,fire_distance)
     iceCount = countNeig[0]
     fireCount = countNeig[1]
