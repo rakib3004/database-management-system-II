@@ -2,16 +2,30 @@ import glob
 import math
 import numpy as np
 from PIL import Image
+import os
 
 def loadImginVector(img_path):
     img_vectors = []
     for img_path in glob.glob(img_path):
         img = Image.open(img_path).resize((32,32))
-        print(img.info)
         img_data = img.getdata()
         img_vector = np.array(img_data).flatten()
         img_vectors.append(img_vector)
     return img_vectors
+
+
+
+def loadTestImginVector(img_path):
+    img_vectors = []
+    for img_path in glob.glob(img_path):
+        imageName=os.path.basename(img_path)
+        print(os.path.splitext(imageName)[0])
+        img = Image.open(img_path).resize((32,32))
+        img_data = img.getdata()
+        img_vector = np.array(img_data).flatten()
+        img_vectors.append(img_vector)
+    return img_vectors, imageName
+
 
 def calculate_distance(testVec, examVec):
     distance = 0
@@ -35,7 +49,7 @@ if __name__ == '__main__':
     forestVector = loadImginVector('forest/*')
     mountainVector = loadImginVector('mountain/*')
 
-    testDocuments = loadImginVector('test/*')
+    testDocuments,imageName = loadTestImginVector('test/*')
 
     for test_vector in testDocuments:
 
@@ -48,8 +62,8 @@ if __name__ == '__main__':
         mountainCount = countNearestNeighbour[1]
 
         if forestCount > mountainCount:
-            print('forest')
+            print(imageName, ': forest')
             
         else:
-            print("mountain")
+            print(imageName, ": mountain")
             
