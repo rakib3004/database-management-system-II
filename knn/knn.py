@@ -16,6 +16,7 @@ def calculate_distance(testVec, examVec):
     distance = 0
     for i in range(len(examVec)):
         distance += (testVec[i] - examVec[i]) * (testVec[i] - examVec[i])
+    print(testVec[1],examVec[1],math.sqrt(distance))
     return math.sqrt(distance)
 
 def count_neighbour(k,class1,class2):
@@ -30,20 +31,20 @@ def count_neighbour(k,class1,class2):
 
 if __name__ == '__main__':
 
-    iceVector = loadImginVector('forest/*')
-    fireVector = loadImginVector('mountain/*')
+    forestVector = loadImginVector('forest/*')
+    mountainVector = loadImginVector('mountain/*')
 
     test_vector = loadImginVector('forest.png')[0]
     
-    ice_distance =  sorted([calculate_distance(test_vector,exam_vector) for exam_vector in iceVector])
-    fire_distance = sorted([calculate_distance(test_vector,exam_vector) for exam_vector in fireVector])
+    forest_distance =  sorted([calculate_distance(test_vector,exam_vector) for exam_vector in forestVector])
+    mountain_distance = sorted([calculate_distance(test_vector,exam_vector) for exam_vector in mountainVector])
 
-    k = 3
-    countNeig = count_neighbour(k,ice_distance,fire_distance)
-    iceCount = countNeig[0]
-    fireCount = countNeig[1]
+    k = 10
+    countNeig = count_neighbour(k,forest_distance,mountain_distance)
+    forestCount = countNeig[0]
+    mountainCount = countNeig[1]
 
-    if iceCount > fireCount:
+    if forestCount > mountainCount:
         print('forest')
     else:
         print("mountain")
