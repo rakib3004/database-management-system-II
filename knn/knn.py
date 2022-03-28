@@ -55,15 +55,14 @@ if __name__ == '__main__':
 
         forest_distance =  sorted([calculate_distance(test_vector,exam_vector) for exam_vector in forestVector])
         mountain_distance = sorted([calculate_distance(test_vector,exam_vector) for exam_vector in mountainVector])
-        #print('forest distance: ', forest_distance, 'mountain_distance: ', mountain_distance )
         k = 10
         countNearestNeighbour = count_neighbour(k,forest_distance,mountain_distance)
         forestCount = countNearestNeighbour[0]
         mountainCount = countNearestNeighbour[1]
 
         if forestCount > mountainCount:
-            print(imageName, ': forest')
+            print('forest')
             
         else:
-            print(imageName, ": mountain")
+            print("mountain")
             
