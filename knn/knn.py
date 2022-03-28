@@ -7,6 +7,7 @@ def loadImginVector(img_path):
     img_vectors = []
     for img_path in glob.glob(img_path):
         img = Image.open(img_path).resize((32,32))
+        print(img.info)
         img_data = img.getdata()
         img_vector = np.array(img_data).flatten()
         img_vectors.append(img_vector)
@@ -26,7 +27,7 @@ def count_neighbour(k,class1,class2):
             class1_count += 1
         else:
             class2_count += 1
-        print(class1_count,class2_count)
+        #print(class1_count,class2_count)
     return class1_count,class2_count
 
 if __name__ == '__main__':
@@ -40,7 +41,7 @@ if __name__ == '__main__':
 
         forest_distance =  sorted([calculate_distance(test_vector,exam_vector) for exam_vector in forestVector])
         mountain_distance = sorted([calculate_distance(test_vector,exam_vector) for exam_vector in mountainVector])
-        print('forest distance: ', forest_distance, 'mountain_distance: ', mountain_distance )
+        #print('forest distance: ', forest_distance, 'mountain_distance: ', mountain_distance )
         k = 10
         countNearestNeighbour = count_neighbour(k,forest_distance,mountain_distance)
         forestCount = countNearestNeighbour[0]
@@ -48,5 +49,7 @@ if __name__ == '__main__':
 
         if forestCount > mountainCount:
             print('forest')
+            
         else:
             print("mountain")
+            
