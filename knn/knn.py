@@ -30,10 +30,10 @@ def count_neighbour(k,class1,class2):
 
 if __name__ == '__main__':
 
-    iceVector = loadImginVector('ice/*')
-    fireVector = loadImginVector('fire/*')
+    iceVector = loadImginVector('bangladesh/*')
+    fireVector = loadImginVector('india/*')
 
-    test_vector = loadImginVector('test1.png')[0]
+    test_vector = loadImginVector('')[0]
     
     ice_distance =  sorted([calculate_distance(test_vector,exam_vector) for exam_vector in iceVector])
     fire_distance = sorted([calculate_distance(test_vector,exam_vector) for exam_vector in fireVector])
@@ -44,6 +44,6 @@ if __name__ == '__main__':
     fireCount = countNeig[1]
 
     if iceCount > fireCount:
-        print('ice')
+        print('bangladesh')
     else:
-        print("fire")
+        print("india")
