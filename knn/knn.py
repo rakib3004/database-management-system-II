@@ -4,45 +4,47 @@ import numpy as np
 from PIL import Image
 import os
 
-def loadImginVector(img_path):
-    img_vectors = []
-    for img_path in glob.glob(img_path):
-        img = Image.open(img_path).resize((32,32))
-        img_data = img.getdata()
-        img_vector = np.array(img_data).flatten()
-        img_vectors.append(img_vector)
-    return img_vectors
+def loadImginVector(imagePath):
+    imageVectors = []
+    for imagePath in glob.glob(imagePath):
+        img = Image.open(imagePath).resize((32,32))
+        imageData = img.getdata()
+        imageVector = np.array(imageData).flatten()
+        imageVectors.append(imageVector)
+    return imageVectors
 
 
 
-def loadTestImginVector(img_path):
-    img_vectors = []
-    for img_path in glob.glob(img_path):
-        imageName=os.path.basename(img_path)
+def loadTestImginVector(imagePath):
+    imageVectors = []
+    for imagePath in glob.glob(imagePath):
+        imageName=os.path.basename(imagePath)
         print(os.path.splitext(imageName)[0])
-        img = Image.open(img_path).resize((32,32))
-        img_data = img.getdata()
-        img_vector = np.array(img_data).flatten()
-        img_vectors.append(img_vector)
-    return img_vectors, imageName
+        img = Image.open(imagePath).resize((32,32))
+        imageData = img.getdata()
+        imageVector = np.array(imageData).flatten()
+        imageVectors.append(imageVector)
+    return imageVectors, imageName
 
 
-def calculateDistance(testVec, examVec):
+def calculateDistance(NonClassifiedData, classifiedData):
     distance = 0
-    for i in range(len(examVec)):
-        distance += (testVec[i] - examVec[i]) * (testVec[i] - examVec[i])
-    return math.sqrt(distance)
+    dataDimention = len(classifiedData)
+    for i in range(dataDimention):
+        distance =  distance + pow((NonClassifiedData[i] - classifiedData[i]),2)
+        euclideanDistance = math.sqrt(distance)
+    return euclideanDistance
 
 def countNeighbour(k,class1,class2):
-    class1_count = 0
+    class1Count = 0
     class2_count = 0
     for i in range(k):
-        if (class1[class1_count]) < (class2[class2_count]):
-            class1_count += 1
+        if (class1[class1Count]) < (class2[class2_count]):
+            class1Count += 1
         else:
             class2_count += 1
-        #print(class1_count,class2_count)
-    return class1_count,class2_count
+        #print(class1Count,class2_count)
+    return class1Count,class2_count
 
 if __name__ == '__main__':
 
