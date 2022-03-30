@@ -84,6 +84,8 @@ if __name__ == '__main__':
         imageNames.pop(0)
         if forestCount > mountainCount:
             print('forest')
+
+            
             
         else:
             print("mountain")
