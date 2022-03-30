@@ -27,43 +27,54 @@ def loadTestImginVector(imagePath):
     return imageVectors, imageName
 
 
-def calculateDistance(NonClassifiedData, classifiedData):
+def computeEuclideanDistance(nonClassifiedData, classifiedData):
     distance = 0
     dataDimention = len(classifiedData)
     for i in range(dataDimention):
-        distance =  distance + pow((NonClassifiedData[i] - classifiedData[i]),2)
+        distance =  distance + pow((nonClassifiedData[i] - classifiedData[i]),2)
         euclideanDistance = math.sqrt(distance)
     return euclideanDistance
 
 def countNeighbour(k,class1,class2):
     class1Count = 0
-    class2_count = 0
+    class2Count = 0
     for i in range(k):
-        if (class1[class1Count]) < (class2[class2_count]):
+        if (class1[class1Count]) < (class2[class2Count]):
             class1Count += 1
         else:
-            class2_count += 1
-        #print(class1Count,class2_count)
-    return class1Count,class2_count
+            class2Count += 1
+    return class1Count,class2Count
 
 if __name__ == '__main__':
 
     forestVector = loadImginVector('forest/*')
     mountainVector = loadImginVector('mountain/*')
 
-    testDocuments,imageName = loadTestImginVector('test/*')
+    nonClassifiedDocuments,imageName = loadTestImginVector('test/*')
 
     print()
     print()
 
     print("Results: ")
     print("--------")
-    for test_vector in testDocuments:
+    for nonClassifiedData in nonClassifiedDocuments:
 
-        forest_distance =  sorted([calculateDistance(test_vector,exam_vector) for exam_vector in forestVector])
-        mountain_distance = sorted([calculateDistance(test_vector,exam_vector) for exam_vector in mountainVector])
+        forestImageDistanceList =  sorted([computeEuclideanDistance(nonClassifiedData,classifiedData) for classifiedData in forestVector])
+        mountainImageDistanceList = sorted([computeEuclideanDistance(nonClassifiedData,classifiedData) for classifiedData in mountainVector])
         k = 10
-        countNearestNeighbour = countNeighbour(k,forest_distance,mountain_distance)
+
+        forestImageDistanceList=[]
+        mountainImageDistanceList=[]
+        for classifiedData in forestVector:
+            forestImageDistanceList.append(computeEuclideanDistance(nonClassifiedData,classifiedData)) 
+        sorted(forestImageDistanceList)
+
+        for classifiedData in mountainVector:
+            mountainImageDistanceList.append(computeEuclideanDistance(nonClassifiedData,classifiedData)) 
+        sorted(mountainImageDistanceList)
+        
+        countNearestNeighbour = countNeighbour(k,forestImageDistanceList,mountainImageDistanceList)
+        
         forestCount = countNearestNeighbour[0]
         mountainCount = countNearestNeighbour[1]
         
