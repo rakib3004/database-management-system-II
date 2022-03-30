@@ -17,14 +17,17 @@ def loadImginVector(imagePath):
 
 def loadTestImginVector(imagePath):
     imageVectors = []
+    imageNames = []
     for imagePath in glob.glob(imagePath):
         imageName=os.path.basename(imagePath)
-        print(os.path.splitext(imageName)[0])
+        #print(os.path.splitext(imageName)[0])
         img = Image.open(imagePath).resize((32,32))
         imageData = img.getdata()
         imageVector = np.array(imageData).flatten()
         imageVectors.append(imageVector)
-    return imageVectors, imageName
+        imageNames.append(imageName)
+
+    return imageVectors,imageNames
 
 
 def computeEuclideanDistance(nonClassifiedData, classifiedData):
@@ -49,8 +52,8 @@ if __name__ == '__main__':
 
     forestVector = loadImginVector('forest/*')
     mountainVector = loadImginVector('mountain/*')
-
-    nonClassifiedDocuments,imageName = loadTestImginVector('test/*')
+   
+    nonClassifiedDocuments,imageNames = loadTestImginVector('test/*')
 
     print()
     print()
@@ -77,7 +80,8 @@ if __name__ == '__main__':
         
         forestCount = countNearestNeighbour[0]
         mountainCount = countNearestNeighbour[1]
-        
+        print(imageNames[0], " -->  ",end="")
+        imageNames.pop(0)
         if forestCount > mountainCount:
             print('forest')
             
