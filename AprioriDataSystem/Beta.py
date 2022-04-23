@@ -7,7 +7,6 @@ import tkinter as tk
 from tkinter import CENTER, RAISED, StringVar, filedialog
 from turtle import st
 import itertools
-#   This function generates the first candidate set using the dataset
 
 def browseFiles():
     global fileName
@@ -178,97 +177,38 @@ confidence_entry = tk.Entry(root, textvariable=confidence_var, font=('bold'))
 
 sub_btn = tk.Button(root, text='Submit', font=('normal'), command=submit, bg="red")
 
-# explore_label.grid(row=0,column=0, pady=5, padx=10)
-# explore_label.place(x=100, y=300)
-# explore_entry.grid(row=0,column=1, pady=5, padx=10)
-# button_explore.grid(row=0, column=2, pady=5, padx=10)
+
 explore_label.place(x=350, y=300)
 explore_entry.place(x=500, y=300)
 button_explore.place(x=700, y=300)
 
-# support_label.grid(row=1,column=0, pady=5, padx=10)
-# support_entry.grid(row=1,column=1, pady=5, padx=10)
 support_label.place(x=350, y=340)
 support_entry.place(x=500, y=340)
 
-# confidence_label.grid(row=2,column=0, pady=5, padx=10)
-# confidence_entry.grid(row=2,column=1, pady=5, padx=10)
 confidence_label.place(x=350, y=380)
 confidence_entry.place(x=500, y=380)
 
 
-# sub_btn.grid(row=4,column=1, pady=5, padx=10)
 sub_btn.place(x=500, y=500, anchor=CENTER)
 
-# root.columnconfigure(0, weight=1)
-# root.rowconfigure(0, weight=1)
 root.mainloop()
 
 
 
 
-'''
-
-print("\n")
-chooseKey=int(input("1. Show From Existing Data Set\n2. Enter New Data Set\n"))
-
-if(chooseKey==1):
-    print("Select from the following dataset:")
-    print("1. Electronics")
-    print("2. Sports")
-    print("3. Drinks")
-    print("4. Foods")
-    print("5. Mobiles")
-    fileNameInput = input("Enter number (1,2,3,4,5): ")
-
-    print("\n")
-
-
-    if fileNameInput == '1':
-        dataSetFileName = "electronics.csv"
-    if fileNameInput == '2':
-        dataSetFileName = "sports.csv"
-    if fileNameInput == '3':
-        dataSetFileName = "drinks.csv"
-    if fileNameInput == '4':
-        dataSetFileName = "foods.csv"
-    if fileNameInput == '5':
-        dataSetFileName = "mobiles.csv"
-else:
-    print("Enter Data Set Line By Line if want to stop press 0")
-    isGetting=True
-    f = open("customize_data_set.csv", "w")
-    while(isGetting):
-        getData = input("Entey Item: ")
-        getData=getData.strip()
-        if(getData=="0"):
-            isGetting=False
-            dataSetFileName = "customize_data_set.csv"
-        else:
-           f.write(getData+"\n")
-    f.close()
-
-
-
-minimumSupport = input('Enter minimum Support: ')
-minimumConfidence = input('Enter minimum Confidence: ')
-
-minimumSupport = int(minimumSupport)
-minimumConfidence = int(minimumConfidence)
-'''
 
 res = tk.Tk()
-res.title("Results")
-res.geometry("1000x1000")
+res.title("@Author: Md. Rakib Trofder")
+res.geometry("1000x1300")
 
 msg = 'Apriori Algorithm'
 title_label = tk.Label(res, text=msg, font=("Arial", 20, "bold"))
-title_label.place(x=350, y=20)
+title_label.place(x=350, y=0)
 
 
 
 
-msg = 'Results'
+msg = '@Author: Md. Rakib Trofder'
 
 
 minimumSupport=20
@@ -302,22 +242,22 @@ associationRules = generateAssociationRule(fatherFrequentArray)
 
 AprioriOutput = aprioriOutput(associationRules, dataSet, minimumSupport, minimumConfidence)
 
-print('Why?'+str(AprioriOutput))
 outcome=""
-counter = 1
+counter = 0
 if len(AprioriOutput) == 0:
     outcome=" "
 else:
     for i in AprioriOutput:
-       # if counter == 4:
-        print(str(i) + "------>" + str(i))
-        outcome=outcome+str(i) + "------>" + str(i)+"\n"
-        #print(outcome+'!!!!!!!!!')
-        counter = 0
-        #else:
-        #    print(i, end='  ')
-        #    outcome = i + "\n"
-       # counter = counter + 1
+        #outcome=outcome+str(i)
+        if counter == 3:
+            print(str(i) + "------>" + str(i))
+            outcome=outcome+"   "+str(i) + "------>" + str(i)+"\n"
+            #print(outcome+'!!!!!!!!!')
+            counter = 0
+        else:
+            #print(i, end='  ')
+            outcome = outcome+"   "+str(i) + "   "
+            counter = counter + 1
 
 msg =''
 
@@ -328,18 +268,30 @@ par_label = tk.Label(res, text=msg)
 
 msg = outcome
 
-freq_lebel = tk.Label(res, text=msg)
+#freq_lebel = tk.Label(res, text=msg)
 
 msg = ' '
 
 
 rule_label = tk.Label(res, text=msg)
 
-# str_var = tk.StringVar()
-# res_label = tk.Message(res, textvariable=str_var, relief=RAISED)
-# str_var.set(msg)
-# res_label.pack()
-#par_label.place(x=100, y=300)
-freq_lebel.place(x=100, y=50)
-#rule_label.place(x=600, y=300)
+
+
+text_widget = tk.Text(res, height=45, width=180)
+
+scroll_bar = tk.Scrollbar(res)
+
+
+scroll_bar.pack(side=tk.RIGHT)
+
+
+text_widget.pack(side=tk.LEFT)
+
+long_text = outcome
+
+text_widget.insert(tk.END, long_text)
+text_widget.place(x=0, y=32)
+
+
+#freq_lebel.place(x=25, y=60)
 res.mainloop()
