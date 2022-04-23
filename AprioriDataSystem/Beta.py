@@ -19,9 +19,7 @@ def generateC1(dataSet):
         tempArray = []
     return returneSet
 
-#   This function creates Frequent item sets by taking candidate sets as input
-#   At the end, this function calls generateCandidatSets by feeding the output of the
-#   current function as the input of the other function
+
 def generateFrequentItemSet(CandidateList, noOfTransactions, minimumSupport, dataSet, fatherFrequentArray):
     frequentItemsArray = []
     for i in range(len(CandidateList)):
@@ -44,9 +42,7 @@ def generateFrequentItemSet(CandidateList, noOfTransactions, minimumSupport, dat
     else:
         generateCandidateSets(dataSet, eleminatedItemsArray, frequentItemsArray, noOfTransactions, minimumSupport)
 
-#   This function creates Candidate sets by taking frequent sets as the input
-#   At the end, this function calls generateFrequentItemSets by feeding the output of the
-#   crrent function as the input of the other function
+
 def generateCandidateSets(dataSet, eleminatedItemsArray, frequentItemsArray, noOfTransactions, minimumSupport):
     onlyElements = []
     arrayAfterCombinations = []
@@ -84,7 +80,6 @@ def generateCandidateSets(dataSet, eleminatedItemsArray, frequentItemsArray, noO
             candidateSetArray.append(count)
     generateFrequentItemSet(candidateSetArray, noOfTransactions, minimumSupport, dataSet, fatherFrequentArray)
 
-#   This function takes all the frequent sets as the input and generates Association Rules
 def generateAssociationRule(freqSet):
     associationRule = []
     for item in freqSet:
@@ -105,7 +100,6 @@ def generateAssociationRule(freqSet):
                     length = length - 1
     return associationRule
 
-#   This function creates the final output of the algorithm by taking Association Rules as the input
 def aprioriOutput(rules, dataSet, minimumSupport, minimumConfidence):
     returnAprioriOutput = []
     for rule in rules:
@@ -133,17 +127,15 @@ def aprioriOutput(rules, dataSet, minimumSupport, minimumConfidence):
 
     return returnAprioriOutput
 
-#   These few statements are taking input from the user
-#       Such as:
-#           Select a database to mine the data
-#           Minimum Support
-#           Mnimum Confidence
+
+
+
 print("Select from the following dataset:")
-print("1. Auto Mobile")
-print("2. Candies")
-print("3. Computer Accesories")
-print("4. Food")
-print("5. Mobile Accesories")
+print("1. Electronics")
+print("2. Sports")
+print("3. Drinks")
+print("4. Foods")
+print("5. Mobiles")
 print("\n")
 fileNameInput = input("Enter number (1,2,3,4,5): ")
 minimumSupport = input('Enter minimum Support: ')
@@ -152,15 +144,15 @@ print("\n")
 fileName = ""
 
 if fileNameInput == '1':
-    fileName = "automobile.txt"
+    fileName = "electronics.txt"
 if fileNameInput == '2':
-    fileName = "candies.txt"
+    fileName = "sports.txt"
 if fileNameInput == '3':
-    fileName = "computerStuff.txt"
+    fileName = "drinks.txt"
 if fileNameInput == '4':
-    fileName = "food.txt"
+    fileName = "foods.txt"
 if fileNameInput == '5':
-    fileName = "mobileStuff.txt"
+    fileName = "mobiles.txt"
 
 
 minimumSupport = int(minimumSupport)
