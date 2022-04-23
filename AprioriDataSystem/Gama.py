@@ -8,23 +8,6 @@ from tkinter import CENTER, RAISED, StringVar, filedialog
 from turtle import st
 import itertools
 #   This function generates the first candidate set using the dataset
-
-def browseFiles():
-    global fileName
-    fileName = filedialog.askopenfilename(  initialdir = "/",
-                                            title = "Select a Dataset",
-                                            filetypes = (("Text files", "*.txt*"),("all files", "*.*")))
-    explore_var.set(fileName)
-
-def submit():
-    global minSup, minCon,  dataset
-    if support_var.get()!='' : minimumSupport = float(support_var.get())
-    if confidence_var.get()!='' : minimumConfidence = float(confidence_var.get())
-    dataSetFileName = fileName
-    root.destroy()
-
-
-
 def generateC1(dataSet):
     productDict = {}
     returneSet = []
@@ -151,64 +134,9 @@ def aprioriOutput(rules, dataSet, minimumSupport, minimumConfidence):
     return returnAprioriOutput
 
 
-
-root = tk.Tk()
-root.geometry("1000x1000")
-root.title("Apriori Algorithm")
-
-minSup = 20
-minCon = 50
-dataset = ''
-fileName = 'data\\transaction.csv'
-
-support_var = tk.StringVar()
-confidence_var = tk.StringVar()
-explore_var = tk.StringVar()
-
-explore_label = tk.Label(root, text='Dataset', font=('bold'))
-explore_entry = tk.Entry(root, textvariable=explore_var, font=('bold'))
-button_explore = tk.Button(root, text="Select", command=browseFiles)
-
-support_label = tk.Label(root, text='Minimum Support', font=('bold'))
-support_entry = tk.Entry(root, textvariable=support_var, font=('bold'))
-
-confidence_label = tk.Label(root, text='Minimum Confidence', font=('bold'))
-confidence_entry = tk.Entry(root, textvariable=confidence_var, font=('bold'))
+fileName = ""
 
 
-sub_btn = tk.Button(root, text='Submit', font=('normal'), command=submit, bg="red")
-
-# explore_label.grid(row=0,column=0, pady=5, padx=10)
-# explore_label.place(x=100, y=300)
-# explore_entry.grid(row=0,column=1, pady=5, padx=10)
-# button_explore.grid(row=0, column=2, pady=5, padx=10)
-explore_label.place(x=350, y=300)
-explore_entry.place(x=500, y=300)
-button_explore.place(x=700, y=300)
-
-# support_label.grid(row=1,column=0, pady=5, padx=10)
-# support_entry.grid(row=1,column=1, pady=5, padx=10)
-support_label.place(x=350, y=340)
-support_entry.place(x=500, y=340)
-
-# confidence_label.grid(row=2,column=0, pady=5, padx=10)
-# confidence_entry.grid(row=2,column=1, pady=5, padx=10)
-confidence_label.place(x=350, y=380)
-confidence_entry.place(x=500, y=380)
-
-
-# sub_btn.grid(row=4,column=1, pady=5, padx=10)
-sub_btn.place(x=500, y=500, anchor=CENTER)
-
-# root.columnconfigure(0, weight=1)
-# root.rowconfigure(0, weight=1)
-root.mainloop()
-
-
-
-dataSetFileName = "foods.csv"
-
-'''
 
 print("\n")
 chooseKey=int(input("1. Show From Existing Data Set\n2. Enter New Data Set\n"))
@@ -226,15 +154,15 @@ if(chooseKey==1):
 
 
     if fileNameInput == '1':
-        dataSetFileName = "electronics.csv"
+        fileName = "electronics.csv"
     if fileNameInput == '2':
-        dataSetFileName = "sports.txt"
+        fileName = "sports.txt"
     if fileNameInput == '3':
-        dataSetFileName = "drinks.csv"
+        fileName = "drinks.csv"
     if fileNameInput == '4':
-        dataSetFileName = "foods.csv"
+        fileName = "foods.csv"
     if fileNameInput == '5':
-        dataSetFileName = "mobiles.csv"
+        fileName = "mobiles.csv"
 else:
     print("Enter Data Set Line By Line if want to stop press 0")
     isGetting=True
@@ -244,36 +172,18 @@ else:
         getData=getData.strip()
         if(getData=="0"):
             isGetting=False
-            dataSetFileName = "customize_data_set.csv"
+            fileName = "customize_data_set.csv"
         else:
            f.write(getData+"\n")
     f.close()
 
-
-
 minimumSupport = input('Enter minimum Support: ')
 minimumConfidence = input('Enter minimum Confidence: ')
 
+
+
 minimumSupport = int(minimumSupport)
 minimumConfidence = int(minimumConfidence)
-'''
-
-res = tk.Tk()
-res.title("Results")
-res.geometry("1000x1000")
-
-msg = 'Apriori Algorithm'
-title_label = tk.Label(res, text=msg, font=("Arial", 20, "bold"))
-title_label.place(x=350, y=20)
-
-
-
-
-msg = 'Results'
-
-
-minimumSupport=50
-minimumConfidence = 60
 
 nonFrequentSets = []
 allFrequentItemSets = []
@@ -286,7 +196,7 @@ something = 0
 
 
 #   Reading the data file line by line
-with open(dataSetFileName,'r') as fp:
+with open(fileName,'r') as fp:
     lines = fp.readlines()
 
 for line in lines:
@@ -303,40 +213,16 @@ associationRules = generateAssociationRule(fatherFrequentArray)
 
 AprioriOutput = aprioriOutput(associationRules, dataSet, minimumSupport, minimumConfidence)
 
-outcome=""
+
 counter = 1
 if len(AprioriOutput) == 0:
-    outcome="There are no association rules for this support and confidence."
+    print("There are no association rules for this support and confidence.")
 else:
     for i in AprioriOutput:
         if counter == 4:
             print(str(i[0]) + "------>" + str(i[1]))
-            outcome=str(i[0]) + "------>" + str(i[1])+"\n"
             counter = 0
         else:
             print(i, end='  ')
-            outcome = i + "\n"
         counter = counter + 1
 
-
-par_label = tk.Label(res, text=msg)
-msg = ''
-
-
-
-
-msg += outcome
-freq_lebel = tk.Label(res, text=msg)
-msg = ''
-
-
-rule_label = tk.Label(res, text=msg)
-
-# str_var = tk.StringVar()
-# res_label = tk.Message(res, textvariable=str_var, relief=RAISED)
-# str_var.set(msg)
-# res_label.pack()
-par_label.place(x=100, y=300)
-freq_lebel.place(x=400, y=200)
-rule_label.place(x=600, y=300)
-res.mainloop()
