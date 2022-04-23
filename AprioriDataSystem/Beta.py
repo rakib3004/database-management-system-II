@@ -137,22 +137,41 @@ print("3. Drinks")
 print("4. Foods")
 print("5. Mobiles")
 print("\n")
-fileNameInput = input("Enter number (1,2,3,4,5): ")
-minimumSupport = input('Enter minimum Support: ')
-minimumConfidence = input('Enter minimum Confidence: ')
-print("\n")
 fileName = ""
+chooseKey=int(input("1. Show From Existing Data Set \n 2. Enter New Data Set\n"))
 
-if fileNameInput == '1':
-    fileName = "electronics.txt"
-if fileNameInput == '2':
-    fileName = "sports.txt"
-if fileNameInput == '3':
-    fileName = "drinks.txt"
-if fileNameInput == '4':
-    fileName = "foods.txt"
-if fileNameInput == '5':
-    fileName = "mobiles.txt"
+if(chooseKey==1):
+    fileNameInput = input("Enter number (1,2,3,4,5): ")
+
+    print("\n")
+
+
+    if fileNameInput == '1':
+        fileName = "electronics.txt"
+    if fileNameInput == '2':
+        fileName = "sports.txt"
+    if fileNameInput == '3':
+        fileName = "drinks.txt"
+    if fileNameInput == '4':
+        fileName = "foods.txt"
+    if fileNameInput == '5':
+        fileName = "mobiles.txt"
+else:
+    print("Enter Data Set Line By Line if want to stop press 0")
+    isGetting=True
+    f = open("customize_data_set.txt", "w")
+    while(isGetting):
+        getData = input("Entey Item: ")
+        getData=getData.strip()
+        if(getData=="0"):
+            isGetting=False
+            fileName = "customize_data_set.txt"
+        else:
+           f.write(getData+"\n")
+
+    minimumSupport = input('Enter minimum Support: ')
+    minimumConfidence = input('Enter minimum Confidence: ')
+    f.close()
 
 
 minimumSupport = int(minimumSupport)
