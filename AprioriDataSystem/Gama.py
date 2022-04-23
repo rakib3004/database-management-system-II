@@ -156,7 +156,7 @@ if(chooseKey==1):
     if fileNameInput == '1':
         fileName = "electronics.csv"
     if fileNameInput == '2':
-        fileName = "sports.txt"
+        fileName = "sports.csv"
     if fileNameInput == '3':
         fileName = "drinks.csv"
     if fileNameInput == '4':

@@ -13,11 +13,11 @@ def browseFiles():
     global fileName
     fileName = filedialog.askopenfilename(  initialdir = "/",
                                             title = "Select a Dataset",
-                                            filetypes = (("Text files", "*.txt*"),("all files", "*.*")))
+                                            filetypes = (("Text files", "*.csv*"),("all files", "*.*")))
     explore_var.set(fileName)
 
 def submit():
-    global minSup, minCon,  dataset
+    global minSup, minCon,  dataSetFileName
     if support_var.get()!='' : minimumSupport = float(support_var.get())
     if confidence_var.get()!='' : minimumConfidence = float(confidence_var.get())
     dataSetFileName = fileName
@@ -206,7 +206,6 @@ root.mainloop()
 
 
 
-dataSetFileName = "foods.csv"
 
 '''
 
@@ -228,7 +227,7 @@ if(chooseKey==1):
     if fileNameInput == '1':
         dataSetFileName = "electronics.csv"
     if fileNameInput == '2':
-        dataSetFileName = "sports.txt"
+        dataSetFileName = "sports.csv"
     if fileNameInput == '3':
         dataSetFileName = "drinks.csv"
     if fileNameInput == '4':
@@ -272,8 +271,8 @@ title_label.place(x=350, y=20)
 msg = 'Results'
 
 
-minimumSupport=50
-minimumConfidence = 60
+minimumSupport=20
+minimumConfidence = 30
 
 nonFrequentSets = []
 allFrequentItemSets = []
@@ -303,31 +302,35 @@ associationRules = generateAssociationRule(fatherFrequentArray)
 
 AprioriOutput = aprioriOutput(associationRules, dataSet, minimumSupport, minimumConfidence)
 
+print('Why?'+str(AprioriOutput))
 outcome=""
 counter = 1
 if len(AprioriOutput) == 0:
-    outcome="There are no association rules for this support and confidence."
+    outcome=" "
 else:
     for i in AprioriOutput:
-        if counter == 4:
-            print(str(i[0]) + "------>" + str(i[1]))
-            outcome=str(i[0]) + "------>" + str(i[1])+"\n"
-            counter = 0
-        else:
-            print(i, end='  ')
-            outcome = i + "\n"
-        counter = counter + 1
+       # if counter == 4:
+        print(str(i) + "------>" + str(i))
+        outcome=outcome+str(i) + "------>" + str(i)+"\n"
+        #print(outcome+'!!!!!!!!!')
+        counter = 0
+        #else:
+        #    print(i, end='  ')
+        #    outcome = i + "\n"
+       # counter = counter + 1
 
+msg =''
 
 par_label = tk.Label(res, text=msg)
-msg = ''
 
 
 
 
-msg += outcome
+msg = outcome
+
 freq_lebel = tk.Label(res, text=msg)
-msg = ''
+
+msg = ' '
 
 
 rule_label = tk.Label(res, text=msg)
@@ -336,7 +339,7 @@ rule_label = tk.Label(res, text=msg)
 # res_label = tk.Message(res, textvariable=str_var, relief=RAISED)
 # str_var.set(msg)
 # res_label.pack()
-par_label.place(x=100, y=300)
-freq_lebel.place(x=400, y=200)
-rule_label.place(x=600, y=300)
+#par_label.place(x=100, y=300)
+freq_lebel.place(x=100, y=50)
+#rule_label.place(x=600, y=300)
 res.mainloop()
