@@ -1,11 +1,3 @@
-'''
-
-                        Data Mining algorithm - Apriori Algorithm
-
-sculpted by: Jeet Patel
-sculpted on: February 20, 2018
-
-'''
 
 
 import itertools
