@@ -18,10 +18,8 @@ with open('UserRating.csv') as userRatingID:
     userRating=userRating.split('\n')
     for u_item in userRating:
         u_item=u_item.split(',')
-        print('---')
-        print(u_item)
-        print('---')
-
+        for ux in u_item:
+            
 
    
 
