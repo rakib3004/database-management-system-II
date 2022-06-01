@@ -6,6 +6,7 @@ import json
 with open('Item.txt') as videoItemId:
     lines = videoItemId.readlines()
     lines=str(lines)
+
     lines=lines.replace("\\n","").replace("\\r","")
     print(lines)
 videoItemId.close()
@@ -13,8 +14,14 @@ videoItemId.close()
 
 with open('UserRating.csv') as userRatingID:
     userRating=userRatingID.read()
-    userRating=str(userRating)
-    print(userRating)
+    userRating=userRating.split('\n')
+    for u_item in userRating:
+        u_item=u_item.split(',')
+        print(u_item)
+
+    #for userTem in user
+    #print(userRating)
+
 
 
 userRatingID.close()
