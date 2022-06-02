@@ -77,7 +77,7 @@ videoDataSteam=1
 videoID=1
 
 print("Videos which are recommended for you:")
-for f in filter1:
+for f in flexibleFLow:
     #print(youTubeVideoUrlListFile[f], end='')
     print('{ "videoID":"'+youTubeVideoUrlListFile[f].strip()+'"'+', "videoTitle":"'+youTubeVideoUrlTitleFile[f].strip()+'" , "videoTopic":"'+youTubeVideoUrlTopicFile[f].strip()+'" },')
 
