@@ -43,7 +43,6 @@ print('Turing Tesing: ', dataset_sort_des)
 
 filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 1].item_id
 filter1 = filter1.tolist()
-#filter1 = filter1[:40]
 print("Items liked by user: ", filter1)
 
 
