@@ -20,7 +20,7 @@ data = json.load(f)
 # Iterating through the json
 # list
 for i in data:
-    print(val_num(i['videoId']))
+    print(i['videoId'])
   
 # Closing file
 f.close()
