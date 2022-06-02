@@ -44,11 +44,8 @@ filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 1].item_id
 filter1 = filter1.tolist()
 filter1 = filter1[:20]
 
-flexibleFLow=[]
+flexibleFLow=filter1
 
-for f in filter1:
-    f=f%10
-    flexibleFLow.append(f)
 
 print("Items liked by user: ", flexibleFLow)
 

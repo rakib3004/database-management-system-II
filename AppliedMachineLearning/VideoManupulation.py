@@ -19,8 +19,8 @@ data = json.load(f)
   
 # Iterating through the json
 # list
-for i in data:
-    print(i['topic'])
+for i in range(len(data)):
+    print(i)
   
 # Closing file
 f.close()
