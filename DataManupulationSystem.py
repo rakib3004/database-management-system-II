@@ -8,12 +8,12 @@ userDataFile=open('user.data','w')
 with open('UserRating.csv') as videoItemId:
     userRating=videoItemId.read()
     userRating=userRating.split('\n')
+    user_index=0
     for u_item in userRating:
         u_item=u_item.split(',')
-        user_index=u_item[0]
+        user_index=user_index+1
         timestamp=u_item[1]
         item_no=0
-        print('SIZE: ',len(u_item))
         for ux in u_item:
             item_no=item_no+1
             ux=int(ux)
@@ -24,7 +24,8 @@ with open('UserRating.csv') as videoItemId:
                 writeInData=str(user_index)+"\t"+str(item_index)+"\t"+str(ux)+"\t"+str(timestamp)+"\n"
                 userDataFile.write(writeInData)
                 t=22
-            
+            if(item_no>50):
+                break
             
 videoItemId.close()
 userDataFile.close()

@@ -38,17 +38,24 @@ knn.fit(csr_sample)
 
 dataset_sort_des = dataset.sort_values(
     ['user_id', 'timestamp'], ascending=[True, False])
-print('Turing Tesing: ', dataset_sort_des)
 
 
 filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 1].item_id
 filter1 = filter1.tolist()
-print("Items liked by user: ", filter1)
+filter1 = filter1[:20]
+
+flexibleFLow=[]
+
+for f in filter1:
+    f=f%10
+    flexibleFLow.append(f)
+
+print("Items liked by user: ", flexibleFLow)
 
 
 distances1 = []
 indices1 = []
-for i in filter1:
+for i in flexibleFLow:
     distances, indices = knn.kneighbors(csr_sample[i], n_neighbors=3)
     indices = indices.flatten()
     indices = indices[1:]
