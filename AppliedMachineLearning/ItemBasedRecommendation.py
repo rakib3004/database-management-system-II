@@ -40,7 +40,7 @@ dataset_sort_des = dataset.sort_values(
     ['user_id', 'timestamp'], ascending=[True, False])
 
 
-filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 83].item_id
+filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 44].item_id
 filter1 = filter1.tolist()
 filter1 = filter1[:20]
 
@@ -77,7 +77,7 @@ videoDataSteam=1
 videoID=1
 
 print("Videos which are recommended for you:")
-for f in indices1:
+for f in flexibleFLow:
     if(f>60):
         continue
     #print(youTubeVideoUrlListFile[f], end='')
