@@ -40,7 +40,7 @@ dataset_sort_des = dataset.sort_values(
     ['user_id', 'timestamp'], ascending=[True, False])
 
 
-filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 44].item_id
+filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 35].item_id
 filter1 = filter1.tolist()
 filter1 = filter1[:20]
 
