@@ -40,7 +40,7 @@ dataset_sort_des = dataset.sort_values(
     ['user_id', 'timestamp'], ascending=[True, False])
 
 
-filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 1].item_id
+filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 83].item_id
 filter1 = filter1.tolist()
 filter1 = filter1[:20]
 
@@ -57,6 +57,9 @@ for i in flexibleFLow:
     indices = indices.flatten()
     indices = indices[1:]
     indices1.extend(indices)
+
+print("Items to be recommended: ",indices1)
+
 #print("Items to be recommended: ", indices1)
 youTubeVideoUrlListPlainText = open("YouTubeData/YouTubeVideoID.txt", encoding="utf8")
 
@@ -74,7 +77,9 @@ videoDataSteam=1
 videoID=1
 
 print("Videos which are recommended for you:")
-for f in flexibleFLow:
+for f in indices1:
+    if(f>60):
+        continue
     #print(youTubeVideoUrlListFile[f], end='')
     print('{ "videoID":"'+youTubeVideoUrlListFile[f].strip()+'"'+', "videoTitle":"'+youTubeVideoUrlTitleFile[f].strip()+'" , "videoTopic":"'+youTubeVideoUrlTopicFile[f].strip()+'" },')
 
