@@ -9,8 +9,8 @@ import pandas as pd
 import sys
 
 
-user_ID=sys.argv[1]
-user_ID=int(user_ID)
+user_ID=17
+#user_ID=int(user_ID)
 
 header = ['user_id', 'item_id', 'rating', 'timestamp']
 dataset = pd.read_csv('user.data', sep='\t', names=header)
@@ -25,7 +25,7 @@ n_items = dataset['item_id'].max()
 A = np.zeros((n_users, n_items), dtype=int)
 for line in dataset.itertuples():
     A[line[1]-1, line[2]-1] = line[3]
-print("Original rating matrix : ", A)
+#print("Original rating matrix : ", A)
 
 for i in range(len(A)):
     for j in range(len(A[0])):
@@ -35,7 +35,7 @@ for i in range(len(A)):
             A[i][j] = 0
 
 csr_sample = csr_matrix(A)
-print(csr_sample)
+#print(csr_sample)
 
 knn = NearestNeighbors(metric='cosine', algorithm='brute',
                        n_neighbors=3, n_jobs=-1)
@@ -45,27 +45,27 @@ dataset_sort_des = dataset.sort_values(
     ['user_id', 'timestamp'], ascending=[True, False])
 
 
-filter1 = dataset_sort_des[dataset_sort_des['user_id'] == user_ID].item_id
-filter1 = filter1.tolist()
-filter1 = filter1[:20]
-
-flexibleFLow=filter1
+userBasedItem = dataset_sort_des[dataset_sort_des['user_id'] == user_ID].item_id
+userBasedItem = userBasedItem.tolist()
+userBasedItem = userBasedItem[:20]
 
 
-print("Items liked by user: ", flexibleFLow)
 
 
-distances1 = []
-indices1 = []
-for i in flexibleFLow:
+
+
+
+
+indexList = []
+for i in userBasedItem:
     distances, indices = knn.kneighbors(csr_sample[i], n_neighbors=3)
     indices = indices.flatten()
     indices = indices[1:]
-    indices1.extend(indices)
+    indexList.extend(indices)
 
-print("Items to be recommended: ",indices1)
+indexList=set(indexList)
+print("Items to be recommended: ",indexList)
 
-#print("Items to be recommended: ", indices1)
 youTubeVideoUrlListPlainText = open("YouTubeData/YouTubeVideoID.txt", encoding="utf8")
 
 youTubeVideoUrlListFile=youTubeVideoUrlListPlainText.readlines()
@@ -82,7 +82,7 @@ videoDataSteam=1
 videoID=1
 
 print("Videos which are recommended for you:")
-for f in flexibleFLow:
+for f in indexList:
     if(f>60):
         continue
     #print(youTubeVideoUrlListFile[f], end='')
