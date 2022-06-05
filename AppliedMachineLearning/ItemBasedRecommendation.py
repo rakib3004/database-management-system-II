@@ -73,6 +73,7 @@ distances1 = []
 recommendedItems = []
 for i in itemsLikedByUser:
     distances, indices = knn.kneighbors(csr_sample[i], n_neighbors=3)
+    print(distances,indices)
     indices = indices.flatten()
     indices = indices[1:]
     recommendedItems.extend(indices)
