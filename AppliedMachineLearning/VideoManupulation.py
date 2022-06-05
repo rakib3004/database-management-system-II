@@ -10,17 +10,14 @@ def val_num(video_id):
 
     return val
 
-# Opening JSON file
 f = open('Video.json')
   
-# returns JSON object as 
-# a dictionary
+
 data = json.load(f)
   
-# Iterating through the json
-# list
+print('[')
 for i in range(len(data)):
-    print(i)
-  
+    print('{ "videoId": "'+data[i]['videoId']+'", "title": "'+data[i]['title']+'", "videoNo": "'+str(i+1)+'"},')
+print(']')
 # Closing file
 f.close()
