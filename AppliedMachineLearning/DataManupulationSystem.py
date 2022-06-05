@@ -1,4 +1,16 @@
 import random
+from datetime import datetime
+
+
+def generateTimeStamp(time):
+    time=time.replace("\r","")
+
+    dateTime= datetime.strptime(time, '%m/%d/%y %H:%M:%S')
+
+    time_stamp = datetime.timestamp(dateTime)
+    return time_stamp
+
+
 
 
 item_list=[]
@@ -14,6 +26,11 @@ with open('Testing.csv') as videoItemId:
         u_item=u_item.split(',')
         user_index=u_item[0]
         timestamp=random.randint(455555,475555)
+        timestampStart=generateTimeStamp(u_item[1])
+        timestampFinish=generateTimeStamp(u_item[2])
+        print('Quality Assurance: ', timestampStart,timestampFinish)
+
+
         item_no=0
         for ux in u_item:
             item_no=item_no+1
