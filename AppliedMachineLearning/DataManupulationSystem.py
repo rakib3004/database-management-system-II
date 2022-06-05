@@ -10,6 +10,23 @@ def generateTimeStamp(time):
     time_stamp = datetime.timestamp(dateTime)
     return int(time_stamp)
 
+def countRating(u_item):
+    splitNumberForTimeStamp=0
+    item_no=0
+    for ux in u_item:
+        
+        item_no=item_no+1
+        if(item_no>3):
+            try:
+                ux=int(ux)
+                if(ux>0 and ux<6):
+                    splitNumberForTimeStamp=splitNumberForTimeStamp+1
+            except:
+                a=2018
+
+
+
+    return splitNumberForTimeStamp
 
 
 
@@ -21,7 +38,7 @@ userDataFile=open('user.data','w')
 with open('Testing.csv') as videoItemId:
     userRating=videoItemId.read()
     userRating=userRating.split('\n')
-    
+    print(userRating)
     user_index=0
     for u_item in userRating:
         
@@ -35,9 +52,22 @@ with open('Testing.csv') as videoItemId:
         timestampStart=generateTimeStamp(ts_start)
         timestampFinish=generateTimeStamp(ts_finish)
         print('Quality Assurance: ', timestampStart,timestampFinish)
+        time_start=min(timestampStart,timestampFinish)
+        time_finish=max(timestampStart,timestampFinish)
+        timeStampRange=time_finish-time_start
+        timeStampList=[]
+        splitNumberForTimeStamp=countRating(u_item)
+        for index in range(splitNumberForTimeStamp+1):
+            timeStampList.append(time_start+(index*timeStampRange))
+        
+        random.shuffle(timeStampList)
+
+
+
 
 
         item_no=0
+        rating_index=0
         for ux in u_item:
             item_no=item_no+1
             if(item_no>3):
@@ -45,9 +75,11 @@ with open('Testing.csv') as videoItemId:
                 item_index=str(item_list[item_no])
                 item_index=item_index.replace("\n","").replace("\r","")
                 if(ux>0 and ux<6):
-                    print(user_index,item_index,ux,timestamp,item_no)
-                    writeInData=str(user_index)+"\t"+str(item_index)+"\t"+str(ux)+"\t"+str(timestampStart)+"\n"
+                    
+                    writeInData=str(user_index)+"\t"+str(item_index)+"\t"+str(ux)+"\t"+str(timeStampList[rating_index])+"\n"
+                    print(writeInData)
                     userDataFile.write(writeInData)
+                    rating_index=rating_index+1
                     
                 if(item_no>59):
                     break
