@@ -7,6 +7,19 @@ import seaborn as sns
 import pandas as pd
 
 
+def dataFormatting(recommendedItems):
+    recommendedItems=set(recommendedItems)
+    recommendedItems=list(recommendedItems)
+    itemIterator=0
+    for r in recommendedItems:
+        itemIterator=itemIterator+1
+        if(r>57):
+            recommendedItems.pop(r)
+
+    return recommendedItems
+
+
+
 header = ['user_id', 'item_id', 'rating', 'timestamp']
 dataset = pd.read_csv('user.data', sep='\t', names=header)
 print(dataset.head())
@@ -40,27 +53,31 @@ dataset_sort_des = dataset.sort_values(
     ['user_id', 'timestamp'], ascending=[True, False])
 
 
-filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 35].item_id
+filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 17].item_id
 filter1 = filter1.tolist()
-filter1 = filter1[:20]
-
-flexibleFLow=filter1
 
 
-print("Items liked by user: ", flexibleFLow)
+
+print("Items liked by user: ", filter1)
 
 
 distances1 = []
-indices1 = []
-for i in flexibleFLow:
+recommendedItems = []
+for i in filter1:
     distances, indices = knn.kneighbors(csr_sample[i], n_neighbors=3)
     indices = indices.flatten()
     indices = indices[1:]
-    indices1.extend(indices)
+    recommendedItems.extend(indices)
 
-print("Items to be recommended: ",indices1)
 
-#print("Items to be recommended: ", indices1)
+
+   
+recommendedItems=dataFormatting(recommendedItems)
+print("Items to be recommended: ",recommendedItems)
+
+#print("Items to be recommended: ", recommendedItems)
+
+
 youTubeVideoUrlListPlainText = open("YouTubeData/YouTubeVideoID.txt", encoding="utf8")
 
 youTubeVideoUrlListFile=youTubeVideoUrlListPlainText.readlines()
@@ -77,7 +94,7 @@ videoDataSteam=1
 videoID=1
 
 print("Videos which are recommended for you:")
-for f in flexibleFLow:
+for f in recommendedItems:
     if(f>60):
         continue
     #print(youTubeVideoUrlListFile[f], end='')
