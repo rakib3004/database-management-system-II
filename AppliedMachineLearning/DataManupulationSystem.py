@@ -40,16 +40,16 @@ with open('Testing.csv') as videoItemId:
         item_no=0
         for ux in u_item:
             item_no=item_no+1
-            if(item_no>4):
+            if(item_no>3):
                 ux=int(ux)
                 item_index=str(item_list[item_no])
                 item_index=item_index.replace("\n","").replace("\r","")
                 if(ux>0 and ux<6):
-                    #print(user_index,item_index,ux,timestamp)
+                    print(user_index,item_index,ux,timestamp,item_no)
                     writeInData=str(user_index)+"\t"+str(item_index)+"\t"+str(ux)+"\t"+str(timestampStart)+"\n"
                     userDataFile.write(writeInData)
-                    t=22
-                if(item_no>50):
+                    
+                if(item_no>59):
                     break
             
 videoItemId.close()
