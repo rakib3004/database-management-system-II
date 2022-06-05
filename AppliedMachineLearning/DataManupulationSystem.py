@@ -21,14 +21,20 @@ userDataFile=open('user.data','w')
 with open('Testing.csv') as videoItemId:
     userRating=videoItemId.read()
     userRating=userRating.split('\n')
+    print(userRating)
     user_index=0
     for u_item in userRating:
+        
         u_item=u_item.split(',')
+        
         user_index=u_item[0]
         timestamp=random.randint(455555,475555)
-        timestampStart=generateTimeStamp(u_item[1])
-        timestampFinish=generateTimeStamp(u_item[2])
-        print('Quality Assurance: ', timestampStart,timestampFinish)
+        #print('Unit Testing:', u_item[1],u_item[2])
+        '''timestampStart=generateTimeStamp(str(u_item[1])+
+        ':'+str(random.randint(0,60)))
+        timestampFinish=generateTimeStamp(str(u_item[2])+
+        ':'+str(random.randint(0,60)))
+        print('Quality Assurance: ', timestampStart,timestampFinish)'''
 
 
         item_no=0
@@ -39,7 +45,7 @@ with open('Testing.csv') as videoItemId:
                 item_index=str(item_list[item_no])
                 item_index=item_index.replace("\n","").replace("\r","")
                 if(ux>0 and ux<6):
-                    print(user_index,item_index,ux,timestamp)
+                    #print(user_index,item_index,ux,timestamp)
                     writeInData=str(user_index)+"\t"+str(item_index)+"\t"+str(ux)+"\t"+str(timestamp)+"\n"
                     userDataFile.write(writeInData)
                     t=22
