@@ -87,7 +87,7 @@ with open('Testing.csv') as videoItemId:
                     else:
                         user_id=str(user_index)
                     
-                    writeInData='{ "userId": "'+"bsse11"+user_id+'", "userNo": "'+str(user_index)+'", "videoId": "'+str(data[int(item_index)]['videoId'])+'", "videoNo": "'+str(item_index)+'", "rating": "'+str(ux)+".0"+'", "timestamp": "'+str(timeStampList[rating_index])+'"},'
+                    writeInData='{ "userId": "'+"bsse11"+user_id+'", "userNo": "'+str(user_index)+'", "videoId": "'+str(data[int(item_index)]['videoId'])+'", "videoNo": "'+str(item_index)+'", "rating": "'+str(ux)+".0"+'", "timestamp": "'+str(timeStampList[rating_index])+'"},\n'
 
 
                     print(writeInData)
