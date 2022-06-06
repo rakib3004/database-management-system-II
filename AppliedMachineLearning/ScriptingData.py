@@ -16,7 +16,7 @@ def is_string_an_url(url_string):
 
 
 def check_video_url(video_id):
-    checker_url = "https://www.youtube.com/oembed?url=http://www.youtube.com/watch?v="
+    checker_url = "https://www.youtube.com/watch?v="
     video_url = checker_url + video_id
 
     request = requests.get(video_url)
@@ -51,14 +51,15 @@ while(current_timestamp is not finish_timestamp):
     current_time = datetime.now()
 
 
-    videoID='LlkPYoxF5j0'
+    videoID='LlkPY47F5j0'
     valid_status=check_video_url(videoID)
 
+    
     if(valid_status is True):
         print(videoID,'is valid')
     else:
         print(videoID,'is not valid')
-
+    
     current_timestamp = datetime.timestamp(current_time)
     current_timestamp = int(current_timestamp)
     current_timestamp = finish_timestamp
