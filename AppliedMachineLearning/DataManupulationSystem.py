@@ -90,7 +90,7 @@ with open('Testing.csv') as videoItemId:
                     #'{ "userId": "'+"bsse11"+user_id+"@gmail.com"+'", "userNo": "'+str(user_index)+'", "videoId": "'+str(data[int(item_index)]['videoId'])+'", "videoNo": "'+str(item_index)+'", "rating": "'+str(ux)+".0"+'", "timestamp": "'+str(timeStampList[rating_index])+'"},\n'
 
 
-                    print(writeInData)
+                    #print(writeInData)
                     userDataFile.write(writeInData)
                     rating_index=rating_index+1
                     
