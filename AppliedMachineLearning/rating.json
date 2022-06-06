@@ -1,3 +1,4 @@
+[
 { "userId": "bsse1139@gmail.com", "userNo": "39", "videoId": "LvL3YXa0n2M", "videoNo": "2", "rating": "4.0", "timestamp": "1654540286"},
 { "userId": "bsse1139@gmail.com", "userNo": "39", "videoId": "mYhy7eaazIk", "videoNo": "4", "rating": "3.0", "timestamp": "1653574082"},
 { "userId": "bsse1139@gmail.com", "userNo": "39", "videoId": "4x6zzQcMT3w", "videoNo": "5", "rating": "5.0", "timestamp": "1653735116"},
@@ -3129,4 +3130,5 @@
 { "userId": "bsse1109@gmail.com", "userNo": "9", "videoId": "77FkWW75dX4", "videoNo": "52", "rating": "1.0", "timestamp": "1655630860"},
 { "userId": "bsse1109@gmail.com", "userNo": "9", "videoId": "pSFkiqtGgjs", "videoNo": "53", "rating": "3.0", "timestamp": "1655754724"},
 { "userId": "bsse1109@gmail.com", "userNo": "9", "videoId": "d5lEkz3Bomc", "videoNo": "54", "rating": "1.0", "timestamp": "1656064384"},
-{ "userId": "bsse1109@gmail.com", "userNo": "9", "videoId": "Uh9643c2P6k", "videoNo": "57", "rating": "5.0", "timestamp": "1654825744"},
+{ "userId": "bsse1109@gmail.com", "userNo": "9", "videoId": "Uh9643c2P6k", "videoNo": "57", "rating": "5.0", "timestamp": "1654825744"}
+]
