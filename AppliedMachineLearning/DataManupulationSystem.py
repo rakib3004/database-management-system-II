@@ -80,14 +80,14 @@ with open('Testing.csv') as videoItemId:
                 item_index=item_index.replace("\n","").replace("\r","")
                 if(ux>0 and ux<6):
                     
-                    #str(user_index)+"\t"+str(item_index)+"\t"+str(ux)+"\t"+str(timeStampList[rating_index])+"\n"
+                    writeInData=str(user_index)+"\t"+str(item_index)+"\t"+str(ux)+"\t"+str(timeStampList[rating_index])+"\n"
                     
                     if(int(user_index)<10):
                         user_id="0"+str(user_index)
                     else:
                         user_id=str(user_index)
                     
-                    writeInData='{ "userId": "'+"bsse11"+user_id+'", "userNo": "'+str(user_index)+'", "videoId": "'+str(data[int(item_index)]['videoId'])+'", "videoNo": "'+str(item_index)+'", "rating": "'+str(ux)+".0"+'", "timestamp": "'+str(timeStampList[rating_index])+'"},\n'
+                    #'{ "userId": "'+"bsse11"+user_id+"@gmail.com"+'", "userNo": "'+str(user_index)+'", "videoId": "'+str(data[int(item_index)]['videoId'])+'", "videoNo": "'+str(item_index)+'", "rating": "'+str(ux)+".0"+'", "timestamp": "'+str(timeStampList[rating_index])+'"},\n'
 
 
                     print(writeInData)
