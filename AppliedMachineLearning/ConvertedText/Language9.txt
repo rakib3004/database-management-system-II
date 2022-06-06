@@ -1,0 +1,100 @@
+motorcycles of today are the true
+marvels of engineering a basic model of
+inner parts of a typical motorcycle is
+shown here in this video we will explain
+the basic function of each of these
+parts in a motorcycle let's begin from
+how a motorcycle engine starts all
+motorcycles have either a Kickstarter or
+a self-starter or both a Kickstarter
+mechanism is simple yet interesting as
+the Kickstarter lever is descended a
+helical spline forces the gear to slide
+and engage with a freewheeling gear on
+the main shaft as the lever is descended
+further the gear spins on its axis and
+transfers the power to the clutch hub
+the clutch hub transfers the power to
+the crankshaft and eventually to the
+engine in a self starter system a
+battery-powered motor provides initial
+spin to the engine once the engine is
+started the starter motor has to be
+disengaged from the crankshaft to
+prevent damage due to excessive speed
+this is achieved by using a one-way
+clutch the model shown here is of a
+roller type one-way clutch it has an
+outer race and an inner race with small
+rollers as the starter motor spins the
+outer race in one direction the rollers
+get trapped between the surfaces and the
+power is transferred to the inner race
+and thus to the crankshaft once the
+inner race starts spinning faster than
+the outer race the rollers get released
+causing the inner race to spin freely
+like every four-stroke gasoline engine
+motorcycle engines require a source of
+ignition to ignite the air fuel mixture
+for power strokes a spark plug is used
+for this purpose the spark plug requires
+voltage in excess of 20,000 volts to
+fire properly in this particular model
+the voltage is obtained from the stator
+of the motorcycle although a 12-volt
+battery may be used for the same purpose
+the stator is a stationary coil of wires
+the flywheel of the motorcycle has a set
+of permanent magnets which revolves
+around the stator and produces
+alternating current in the coils each
+output from the stator has different
+purposes as shown here the output for
+the ignition purpose is received from
+the exciter coil this coil has a denser
+winding of thinner wire than the other
+coils to produce higher voltage for the
+ignition this voltage is supplied to an
+electrical component known as the
+capacitive discharge ignition or CDI
+unit the connection for an AC CDI is
+shown here the primary function of the
+CDI unit is to store electric charge and
+dump the stored charge when required a
+capacitor inside the CDI unit stores the
+electric charge another component known
+as a pickup coil tells the CDI unit when
+to dump this charge the pickup coil has
+a small magnet with a coil of wire
+around it the flywheel has a small
+extrusion on its outer surface as this
+extrusion approaches and passes the
+pickup coil a small voltage is developed
+in the coil this voltage is supplied to
+the CDI unit which closes an electronic
+switch known as a silicon controlled
+rectifier or SCR this will dump all the
+charge from the capacitor through the
+output of the CDI unit to increase the
+voltage further an ignition coil is used
+the ignition coil is a step-up
+transformer which increases voltage up
+to 200 times the input voltage which is
+sufficient to fire the spark plug
+several other factors contribute to the
+continuous operation of the engine the
+in
+and exhaust valves are controlled by
+using a timing chain as shown here as
+long as the engine is running the
+crankshaft rotates and transfers power
+to the other components for proper
+operation single cylinder engines
+generally use a counterbalance to reduce
+the vibration caused by unbalanced
+forces the clutch helps in smooth
+transfer of power from the crankshaft to
+the transmission system the transmission
+system helps in altering the speed and
+torque as per our requirement

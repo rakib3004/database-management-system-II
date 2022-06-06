@@ -1,0 +1,323 @@
+I’ve talked a lot about observing the night
+sky with your eyes; just simply going out
+and seeing what you can see. It’s pretty
+amazing what you can learn just by doing that,
+and of course that’s all we humans could
+do for thousands of years.
+But now we can do better. We can use telescopes.
+The first person to invent the telescope is
+lost to history; despite “common knowledge,”
+Galileo did not invent them. He wasn’t even
+the first person to point one at the sky,
+or the first person to publish results! But
+he was a loud and persistent voice over the
+years, and his amazing string of discoveries
+using his crude instrument landed him firmly
+in the history books. Aggressive self-marketing
+sometimes pays off.
+You might think the purpose of a telescope
+is to magnify small objects so we can see
+them better. That’s how a lot of telescopes
+are marketed, but to be honest that’s not
+exactly the case. If you want to be really
+general, the purpose of a telescope is to
+make things easier to see: To make the invisible
+visible, and to make the things already visible
+visible more clearly.
+A telescope works by gathering light. Think
+of it like a bucket in the rain: The bigger
+the bucket, the more rain you collect. If
+your bucket is big enough, you’ll get plenty
+of water even when it’s only sprinkling
+out.
+In the case of a telescope, the “bucket”
+is an optical device like a lens or a mirror
+that collects light. We call this device the
+objective, and the bigger the objective, the
+more light it collects. Look at your eyes…
+well, that’s tough, so let’s think about
+our eyes for a moment. They also work as light
+buckets, but they only collect light through
+our pupils, which even under the best of
+circumstances are less than a centimeter across;
+a very tiny bucket indeed.
+But we can do better. To extend the analogy,
+a telescope is like a bucket with a funnel
+at the bottom. All that light that it collects
+is then concentrated, focused, and sent into
+your eye. It turns a trickle of light into
+a torrent.
+The amount of light it collects depends on
+the area of the objective. That means if you
+double the diameter of the collector, you’d
+collect four times as much light, because
+the area of the collector goes up as the square
+of the radius. Make a bucket 10 times wider,
+and you collect 100 times as much light! Clearly,
+as telescopes get bigger their ability to
+show us faint objects increases enormously.
+In fact that was one of Galileo’s first
+and most important discoveries: Stars that
+were invisible to the naked eye were easily
+seen through his telescope, even though it
+only had a lens a few centimeters across.
+Those faint stars didn’t emit enough light
+for his eyes to see them, but when he
+increased his collecting area with a telescope,
+they popped into visibility.
+The primary way telescopes work is to change
+the direction light from an object is traveling.
+I can see a star with my eye because light
+from that star is sent in my direction, into
+my eye. But most of that light misses my eye,
+falling to the ground all around me. The telescope
+collects that light, bounces it around, and
+then channels it into my eye.
+When the very first telescopes were built,
+this changing of the direction of light was
+done using lenses. When light goes from one
+medium to another – say, from going through
+air to going through water or glass – it
+changes direction slightly. You see this all
+the time; a spoon sitting in a glass of water
+looks bent or broken. The spoon is doing just
+fine, but the light you see from it is getting
+bent, distorting the image. This bending is
+called refraction.
+The way light bends depends on what’s bending
+it (like water or glass) and the shape of
+the object doing the bending. It so happens
+that if you grind a piece of glass into a
+lens shape, it bends -- or refracts -- the
+incoming light in a cone, focusing it into
+a single spot. It’s a light funnel!
+This refraction has a couple of interesting
+results. For one thing, the light from the
+top of a distant object is bent down, and
+the light from the bottom is bent up. When
+this light comes to a focus, it means you
+see the object upside-down! It also flips
+left and right, which can be a little disconcerting,
+and takes getting used to when you’re using
+a refracting telescope.
+For another thing, the lens can magnify the
+image. That’s again because the light is
+bent, and the image created of object observed
+can appear larger than the object does by
+eye. It depends on a lot of factors including
+the shape of the lens, the distance to the
+object, and how far away the lens is, but in the
+end what you get is an image that looks bigger.
+That has obvious advantages; a planet like
+Jupiter is too far away to see as anything
+other than a dot to the eye, but a telescope
+makes it appear bigger, and details can then
+be seen. When Galileo and other early astronomers
+pointed their telescopes at the sky, multitudes
+were revealed: Craters on the Moon, the phases
+of Venus, Jupiter’s moons, the rings of
+Saturn, and so much more. The Universe itself
+came into focus.
+When astronomers talk about using a telescope
+to make details more clear, they use a term
+called resolution. This is the ability to
+separate two objects that are very close together.
+You’re familiar with this; when you’re
+driving on a road at night a distant car coming
+toward you appears as a single light. When
+it gets closer, the light separates out — resolves
+— into two headlights.
+A telescope increases resolution, making it
+easier to, say, split two stars that are close
+together, or to see details on the Moon’s
+surface. The resolution depends in part on
+the size of the objective; in general
+the bigger the telescope objective
+the better your resolution is.
+Resolution is more useful than magnification
+when talking telescopes. Fundamentally, there
+is a limit to how well your telescope resolves
+two objects, but there’s no limit to how
+much you can magnify the image. If you magnify
+the image beyond what the telescope can actually
+resolve, you just get mush.
+Refracting telescopes are great, but they
+suffer from a big problem: Big lenses are
+hard to make. They get thin near the edge,
+and break easily. Also, different colors of
+light bend by different amounts as they pass
+through the lens, so you might focus a red
+star, say, and a blue one will still look
+fuzzy.
+No less a mind than Isaac Newton figured a
+way around this: Use mirrors. Mirrors also
+change the direction light travels, and if
+you used a curved mirror you can also bring
+light rays to a focus. Telescopes that use
+mirrors are called reflectors.
+The advantages of reflectors are huge: You
+only have to polish one side of a mirror,
+where a lens has two sides. Also a mirror
+can be supported along its back, so they can
+be manufactured much larger more easily and
+for less money. Although there have been many
+improvements made over the centuries, most
+big modern telescopes at their heart are based
+on the Newtonian design, and in fact no large
+professional-grade telescopes made today have
+a lens as their objective. Nowadays, it’s
+all done with mirrors.
+And that brings us to this week’s aptly
+named Focus On.
+The most common question I’m asked (besides,
+“Hey, who does your hair?”) is, “Hey,
+Phil, kind of telescope should I buy?”
+It’s a legitimate question, but it’s very
+difficult to answer. Imagine someone walked
+up to you and asked, “What kind of car should
+I buy?” That’s impossible to answer without
+a lot more information.
+Same for telescopes. Do you want to look at
+the Moon and planets, or fainter, more difficult
+to spot galaxies? Are you really devoted to
+this, or is it more of a pastime? Is this
+for a child or an adult?
+These questions are critical. Most small ‘scopes
+are refractors, which are good for looking
+at detail on the Moon and planets (they tend
+to magnify the image more than reflectors
+do). But they’re tricky to use because they
+flip the image left and right and up and down.
+Bigger ‘scopes are good for fainter objects,
+but are more expensive, and can be difficult
+to set up and use. I hate hearing about a ‘scope that
+just collects dust because it was bought in haste.
+So here’s what I recommend: Find an observatory,
+planetarium, or local astronomy club. They’re
+likely to have star parties, public observing
+events, where you can look at and through
+different kinds of telescopes. Their owners
+are almost universally thrilled to talk about
+them — as an astronomer, I can assure that
+the problem with astronomers isn’t getting
+them to talk, it’s shutting them up — so you’ll get
+lots of great first-hand advice and experience.
+Also, I usually recommend getting binoculars
+before a telescope. They’re easy to use,
+fun to use, easy to carry around, and you
+can get good ones for less money and still
+see some nice things. Even if you decide not
+to get more into astronomy as a hobby, they
+can also be used during the day on hikes and
+for bird watching. I have a couple of pair
+of binoculars and I use them all the time.
+There’s a third aspect to telescopes that’s
+very important, beyond resolution and making
+faint things easier to see. They can literally
+show us objects outside of the range of colors
+our eyes can see.
+In the year 1800, William Herschel discovered
+infrared light, a kind of light invisible
+to our eyes. In the time since we’ve learned
+of other forms of invisible light: radio,
+microwave, ultraviolet, X-rays, and gamma
+rays. Astronomical objects can be observed
+in all these flavors of light, if we have
+telescopes that are designed to detect these
+flavors of light. Radio waves pass right around
+“normal” telescopes, ones that we use
+to observe visible light. X-rays and gamma rays pass
+right through them as if they aren’t even there.
+But we’re smart, we humans. We learned that
+giant metal dishes can and will bend radio
+waves, and can be formed just like gigantic
+Newtonian mirrored telescopes. In fact, different
+forms of light need different kinds of telescopes,
+and once we figured out how, we’ve built
+‘em. We can now detect cosmic phenomena
+across the entire spectrum of light, from
+radio waves to gamma rays, and have even built
+unconventional telescopes that detect subatomic
+particles from space as well, such as neutrinos
+and cosmic rays. Because of this, we have
+learned far more about the Universe than Galileo
+could have imagined.
+And we’re in the midst of another revolution,
+too. The actual biophysics is complicated,
+but in a sense our eyes act like movie cameras,
+taking pictures at a frame rate of about 14
+images per second. That’s a short amount
+of time. Photographs, though, can take far
+longer exposures, allowing the light to build
+up, allowing us to see much fainter objects.
+The first photographs taken through a telescope
+were done in the 1800s. This has led to innumerable
+discoveries; for example, in the 20th century
+giant telescopes with giant cameras revealed
+details in distant galaxies that led to our
+understanding that the Universe is expanding,
+a critically important concept that we’ll
+dive into later in the series.
+And now we have digital detectors, similar
+to the ones in your phone camera, but far
+larger and far more sensitive. They can be dozens
+of times more light-sensitive than film, able
+to detect in minutes objects that would’ve
+taken hours or more to see using film. These
+digital cameras can also be designed to detect
+ultraviolet light, infrared, and more. We
+can store vast amounts of that data easily
+on computers, and use those computers to analyze
+that huge ocean of information, performing
+tasks too tedious for humans. Most asteroids
+and comets are discovered using autonomous
+software, for example, looking for moving
+objects among the tens or hundreds of thousands
+of fixed stars in digital images.
+This has also ushered in the era of remote
+astronomy; a telescope can be on a distant mountain
+and programmed to scan the sky automatically.
+It also means we can loft telescopes into
+space, above the sea of air in our atmosphere
+that blurs and distorts distant, faint objects.
+We can visit other worlds and send the pictures
+and data back home, or put observatories like
+the Hubble Space Telescope into orbit around the Earth
+and have it peer into the vast depths of the Universe.
+I would argue that the past century has seen
+a revolution in astronomy every bit as important
+as the invention of the telescope in the first
+place. In the early 17th century the entire
+sky was new, and everywhere you pointed a
+telescope there was some treasure to behold.
+But with our huge telescopes and incredibly
+sensitive digital eyes now, that’s still true.
+We learn more about the Universe every day,
+just as we learn that there’s more to learn
+every day, too. That’s one of the best parts
+of being an astronomer; the Universe is like
+a jigsaw puzzle with an infinite number of
+pieces. The fun never ends.
+And remember: Even with all the wonders revealed
+by telescopes, your eyes are still pretty
+good instruments, too. You don’t need big
+fancy equipment to see the sky. The important
+thing is to go outside. Look up! That’s
+fun too.
+Today you learned that telescopes do two things:
+Increase our ability to resolve details, and
+collect light so we can see fainter objects.
+There are two main flavors of telescope: Refractors,
+which use a lens, and reflectors, which use
+a mirror. There are also telescopes that are
+used to look at light our eyes can’t see,
+and with the invention of film, and later
+electronic detectors, we have been able to
+probe the Universe to amazing depths.
+Crash Course is produced in association with
+PBS Digital Studios. This episode was written
+by me, Phil Plait. The script was edited by
+Blake de Pastino, and our consultant is Dr.
+Michelle Thaller. It was co-directed by Nicholas
+Jenkins and Michael Aranda, and the graphics
+team is Thought Café.

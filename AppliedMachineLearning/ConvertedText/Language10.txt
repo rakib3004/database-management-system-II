@@ -1,0 +1,127 @@
+the clutch is one of many essential
+components of a motorcycle it is
+operated by pulling or releasing the
+clutch lever with the left hand before
+going into the details on working of a
+clutch let's see how it is assembled in
+motorcycles the power from the engine is
+converted to rotary motion by the
+crankshaft as shown this power is then
+transferred to clutch housing the clutch
+assembly transfers power to the input
+shaft of the gearbox the power is then
+transferred to the output shaft and
+eventually to the rear wheel of the
+motorcycle the clutch assembly itself is
+a combination of several parts it
+consists of a pressure plate held in
+place by using several springs and
+screws this plate presses against the
+clutch pack the clutch pack consists of
+several steel and friction plates placed
+in alternate positions the clutch basket
+and the inner hub are assembled with
+their axes aligned to the input shaft of
+the gearbox now let's understand how a
+clutch works the clutch basket
+freewheels with respect to the gearbox
+the engine power will spin the clutch
+basket but it will not transfer any
+power to the gearbox
+however the inner hub is connected to
+the input shaft of the gearbox if we
+spin this inner hub then it will also
+spin the gearbox input shaft let's take
+a hypothetical connect with teeth on its
+internal and external portion that can
+interlock with both the clutch basket
+and the inner hub if we insert this
+hypothetical connector between the
+clutch basket in the inner hub then we
+can spin both of these at once and the
+engine power reaches the gearbox and if
+we remove this hypothetical connector
+the clutch basket and inner hub will be
+independent again and the engine power
+is disconnected but there is a problem
+in using this connector when the
+connector is removed the inner hub spins
+due to inertia of the motorcycle rear
+wheel and the outer basket spins due to
+engine power this is why these two
+components start spinning at different
+speeds in order to interlock with both
+of these non synchronized spinning
+components the hypothetical connector
+will have
+spin at two different speeds at the same
+time which is impossible for example if
+it matches the inner hub speed then
+interlocking this connector with the
+outer basket will be either impossible
+or too difficult to eliminate this
+problem the clutch pack is used in place
+of this hypothetical connector unlike
+our hypothetical connector the clutch
+pack is a combination of separate
+circular plates
+let's take any two adjacent plates from
+the clutch pack one of them is a
+friction plate and the other is a steel
+plate the friction plate has teeth on
+the outer circumference which always
+interlocks with a clutch basket and can
+slide sideways along this clutch basket
+the plate spins with the clutch basket
+but doesn't affect the inner hub the
+steel plate has teeth in its inner
+portion which always interlocks with the
+grooves in the inner hub and can slide
+sideways along this hub this plate spins
+with the inner hub but doesn't affect
+the outer basket as these plates can
+slide sideways we can press them
+together gradually increasing friction
+so that both of them start acting like a
+single unit like our hypothetical
+connector with this arrangement if we
+spin the outer basket the inner hub will
+also spin this will eventually transfer
+power from the engine to the gearbox
+even if the plates are spinning at
+different rpm at first the gradual
+increase in friction between them will
+eventually synchronize them if we
+release the pressure the two plates
+become independent this will disconnect
+the inner hub with the clutch basket and
+the engine power is disconnected several
+other plates are added to increase
+strength and surface area now let's
+understand how pressure on these plates
+are changed while riding a motorcycle we
+use the pressure plate for this purpose
+it has ducted attachments where a set of
+Springs can fit in
+a set of retainer bolts are screwed to
+the inner hub
+this causes the spring to compress and
+apply force on the clutch pack resulting
+in sufficient friction between the
+plates we can release the pressure on
+the clutch pack by pushing the pressure
+plate outwards we can control this
+pressure by pulling or releasing the
+clutch lever as the clutch lever is
+pulled or released a cable or hydraulic
+system rotates an actuator arm as shown
+in the animation this arm presses
+against the push rod towards the clutch
+this rod goes through a duct inside the
+input shaft and pushes the pressure
+plate releasing the pressure on the
+clutch pack when the clutch lever is
+released the springs again apply
+pressure to the clutch pack as shown in
+the animation
+you
