@@ -1,5 +1,6 @@
 import random
 from datetime import datetime
+import json
 
 
 def generateTimeStamp(time):
@@ -62,9 +63,12 @@ with open('Testing.csv') as videoItemId:
         
         random.shuffle(timeStampList)
 
+        f = open('Video.json')
+  
 
+        data = json.load(f)
 
-
+        
 
         item_no=0
         rating_index=0
@@ -76,13 +80,23 @@ with open('Testing.csv') as videoItemId:
                 item_index=item_index.replace("\n","").replace("\r","")
                 if(ux>0 and ux<6):
                     
-                    writeInData=str(user_index)+"\t"+str(item_index)+"\t"+str(ux)+"\t"+str(timeStampList[rating_index])+"\n"
+                    #str(user_index)+"\t"+str(item_index)+"\t"+str(ux)+"\t"+str(timeStampList[rating_index])+"\n"
+                    
+                    if(int(user_index)<10):
+                        user_id="0"+str(user_index)
+                    else:
+                        user_id=str(user_index)
+                    
+                    writeInData='{ "userId": "'+"bsse11"+user_id+'", "userNo": "'+str(user_index)+'", "videoId": "'+str(data[int(item_index)]['videoId'])+'", "videoNo": "'+str(item_index)+'", "rating": "'+str(ux)+".0"+'", "timestamp": "'+str(timeStampList[rating_index])+'"},'
+
+
                     print(writeInData)
                     userDataFile.write(writeInData)
                     rating_index=rating_index+1
                     
                 if(item_no>59):
                     break
+                
             
 videoItemId.close()
 userDataFile.close()
