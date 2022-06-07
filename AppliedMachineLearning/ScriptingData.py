@@ -31,7 +31,21 @@ def autoGenerateURL(current_time):
 
     try:
         data = yta.get_transcript(video_id)
-       
+        transcript = ''
+        for value in data:
+            for key, val in value.items():
+
+                if key == 'text':
+                    val=str(val)
+                    newVal=val.strip('\n')
+                    print(newVal,end="")
+                    transcript += newVal+" "
+
+
+
+
+        transcript=transcript.strip()
+        transcript=transcript.replace("\n"," ").replace("\r"," ")
 
         f = open("Product.txt", "a")
         f.write(video_id,'::::::',current_time)
