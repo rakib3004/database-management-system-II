@@ -8,7 +8,7 @@ from requests_html import HTMLSession
 from bs4 import BeautifulSoup as bs
 import random
 
-characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'
+characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
 youtubeurl = ''
 

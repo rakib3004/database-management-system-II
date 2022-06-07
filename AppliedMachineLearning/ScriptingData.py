@@ -17,7 +17,7 @@ import random
 
 
 def autoGenerateURL(current_time):
-    characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'
+    characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
     youtubeurl = ''
 
@@ -67,7 +67,7 @@ def autoGenerateURL(current_time):
 
 
 
-time='06/07/22 10:06:25'
+time='06/07/22 10:17:25'
 time=time.replace("\r","")
 
 finish_time = datetime.strptime(time, '%m/%d/%y %H:%M:%S')
