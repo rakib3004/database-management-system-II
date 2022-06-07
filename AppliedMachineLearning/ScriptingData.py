@@ -48,14 +48,16 @@ def autoGenerateURL(current_time):
         transcript=transcript.replace("\n"," ").replace("\r"," ")
 
         f = open("Product.txt", "a")
-        f.write(video_id,'::::::',current_time)
+        writer=video_id+'::::::'+str(current_time)+'\n'
+        f.write(writer)
         f.close()
 
 
         sys.stdout.flush()
     except:
         f = open("Garbage.txt", "a")
-        f.write(video_id,'::::::',current_time)
+        writer=video_id+'::::::'+str(current_time)+'\n'
+        f.write(writer)
         f.close()
 
 
@@ -65,7 +67,7 @@ def autoGenerateURL(current_time):
 
 
 
-time='06/07/22 09:54:25'
+time='06/07/22 10:06:25'
 time=time.replace("\r","")
 
 finish_time = datetime.strptime(time, '%m/%d/%y %H:%M:%S')
@@ -83,7 +85,7 @@ current_time = datetime.now()
 current_timestamp = datetime.timestamp(current_time)
 current_timestamp = int(current_timestamp)
 
-while(current_timestamp is not finish_timestamp):
+while(current_timestamp < finish_timestamp):
     current_time = datetime.now()
 
 
@@ -91,6 +93,6 @@ while(current_timestamp is not finish_timestamp):
     
     current_timestamp = datetime.timestamp(current_time)
     current_timestamp = int(current_timestamp)
-    current_timestamp = finish_timestamp
+    
 
 
