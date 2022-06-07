@@ -6,11 +6,6 @@ from urllib import response
 from requests import session
 from requests_html import HTMLSession
 from bs4 import BeautifulSoup as bs
-
-
-session = HTMLSession()
-
-
 import random
 
 characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'
@@ -19,8 +14,6 @@ youtubeurl = ''
 
 for i in range(0, 11):
     youtubeurl += random.choice(characters)
-
-
 
 
 print(youtubeurl)

@@ -3,33 +3,55 @@ from datetime import date
 import validators
 from validators import ValidationFailure
 import requests
-
-
-def is_string_an_url(url_string):
-    result = validators.url(url_string)
-
-    if isinstance(result, ValidationFailure):
-        print(url_string,'is not available')
-        return False
-    print(url_string,'is available')
-    return result
-
-
-def check_video_url(video_id):
-    checker_url = "https://www.youtube.com/watch?v="
-    video_url = checker_url + video_id
-
-    request = requests.get(video_url)
-
-    return request.status_code == 200
+from re import T
+import sys
+from youtube_transcript_api import YouTubeTranscriptApi as yta
+from time import sleep
+from urllib import response
+from requests import session
+from requests_html import HTMLSession
+from bs4 import BeautifulSoup as bs
+import random
 
 
 
 
+def autoGenerateURL(current_time):
+    characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'
+
+    youtubeurl = ''
+
+    for i in range(0, 11):
+        youtubeurl += random.choice(characters)
+
+
+    print(youtubeurl)
+
+    video_id = youtubeurl
+
+    try:
+        data = yta.get_transcript(video_id)
+       
+
+        f = open("Product.txt", "a")
+        f.write(video_id,'::::::',current_time)
+        f.close()
+
+
+        sys.stdout.flush()
+    except:
+        f = open("Garbage.txt", "a")
+        f.write(video_id,'::::::',current_time)
+        f.close()
 
 
 
-time='06/07/22 00:56:19'
+
+
+
+
+
+time='06/07/22 09:54:25'
 time=time.replace("\r","")
 
 finish_time = datetime.strptime(time, '%m/%d/%y %H:%M:%S')
@@ -51,14 +73,7 @@ while(current_timestamp is not finish_timestamp):
     current_time = datetime.now()
 
 
-    videoID='LlkPY47F5j0'
-    valid_status=check_video_url(videoID)
-
-    
-    if(valid_status is True):
-        print(videoID,'is valid')
-    else:
-        print(videoID,'is not valid')
+    autoGenerateURL(current_time)
     
     current_timestamp = datetime.timestamp(current_time)
     current_timestamp = int(current_timestamp)
